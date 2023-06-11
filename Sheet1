@@ -40,3 +40,11 @@ Problem - Weather Observation system 11
 ANSER
 SELECT DISTINCT CITY FROM STATION
 WHERE (SUBSTRING(CITY,1,1) NOT IN ('A','E','I','O','U') OR SUBSTRING(REVERSE(CITY),1,1) NOT IN ('A','E','I','O','U') )
+
+
+
+
+Problem - Weather Observation system 12
+Answer
+SELECT DISTINCT CITY FROM STATION
+WHERE (SUBSTRING(CITY,1,1) NOT IN ('A','E','I','O','U') AND SUBSTRING(REVERSE(CITY),1,1) NOT IN ('A','E','I','O','U') )
