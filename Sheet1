@@ -1,0 +1,42 @@
+++++++++++++++++++++++All of the Aswer are of MS SQL Server++++++++++++++++++++++++++++++++
+Problem - Weather Observation system 5
+Answer
+SELECT TOP 1 CITY , LEN(CITY)  FROM STATION GROUP BY CITY HAVING LEN(CITY) =(
+SELECT MAX(LEN(CITY)) FROM STATION) ;
+
+SELECT TOP 1 CITY , LEN(CITY) FROM STATION GROUP BY CITY HAVING LEN(CITY) = (
+SELECT MIN(LEN(CITY)) FROM STATION) ;
+
+
+
+Problem - Weather Observation system 6
+Answer
+SELECT distinct CITY FROM STATION WHERE 
+(CITY LIKE 'a%' OR CITY LIKE 'e%'OR CITY LIKE 'i%' OR CITY LIKE 'o%' OR CITY LIKE 'u%')
+
+
+
+
+Problem - Weather Observation system 7
+Answer
+SELECT DISTINCT CITY FROM STATION WHERE(CITY LIKE '%a' OR CITY LIKE '%e' OR
+                                        CITY LIKE '%i' OR CITY LIKE '%o' OR
+                                        CITY LIKE '%u' );
+
+
+
+Problem - Weather Observation system 9
+Answer
+SELECT distinct CITY FROM STATION WHERE 
+CITY NOT LIKE 'a%'
+AND  CITY NOT LIKE 'e%'
+AND CITY NOT LIKE'i%'
+AND CITY NOT LIKE 'o%'
+AND CITY NOT LIKE 'u%';
+
+
+
+Problem - Weather Observation system 11
+ANSER
+SELECT DISTINCT CITY FROM STATION
+WHERE (SUBSTRING(CITY,1,1) NOT IN ('A','E','I','O','U') OR SUBSTRING(REVERSE(CITY),1,1) NOT IN ('A','E','I','O','U') )
