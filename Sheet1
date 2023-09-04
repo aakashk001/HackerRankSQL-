@@ -48,3 +48,14 @@ Problem - Weather Observation system 12
 Answer
 SELECT DISTINCT CITY FROM STATION
 WHERE (SUBSTRING(CITY,1,1) NOT IN ('A','E','I','O','U') AND SUBSTRING(REVERSE(CITY),1,1) NOT IN ('A','E','I','O','U') )
+
+
+PROBLEM - TYPES OF TRIANGLES 
+SELECT 
+CASE 
+WHEN (A+B<=C OR B+C<=A OR A+C<=B ) THEN 'Not A Triangle'
+WHEN (A=B AND B=C AND A=C) THEN 'Equilateral'
+WHEN (A=C  OR B=C OR A=B) THEN 'Isosceles'
+Else 'Scalene'
+END AS Result
+FROM TRIANGLES
