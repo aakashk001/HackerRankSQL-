@@ -59,3 +59,8 @@ WHEN (A=C  OR B=C OR A=B) THEN 'Isosceles'
 Else 'Scalene'
 END AS Result
 FROM TRIANGLES
+
+PROBLEM - The Pads 
+SELECT CONCAT(NAME,CONCAT('(',SUBSTRING (OCCUPATION,1,1),')')) FROM OCCUPATIONS ORDER BY NAME ASC
+SELECT CONCAT('There are a total of ',COUNT(Occupation),' ',LOWER(Occupation),'s.') 
+FROM Occupations GROUP BY Occupation ORDER BY COUNT(Occupation) ,Occupation asc
